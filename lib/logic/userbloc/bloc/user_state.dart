@@ -94,3 +94,26 @@ final class GettingTankByStationIdFailed extends UserState {
   @override
   List<Object> get props => [errormessage];
 }
+
+
+
+final class GetingAllNotifications extends UserState {}
+
+final class GetingAllNotificationsSuccessfully extends UserState {
+  final String successfullMessage;
+  final List<dynamic> data;
+
+  const GetingAllNotificationsSuccessfully({required this.successfullMessage,required this.data});
+
+  @override
+  List<Object> get props => [successfullMessage,data];
+}
+
+final class GetingAllNotificationsFailed extends UserState {
+  final String errorMessage;
+
+  const GetingAllNotificationsFailed({required this.errorMessage,});
+
+  @override
+  List<Object> get props => [errorMessage,];
+}

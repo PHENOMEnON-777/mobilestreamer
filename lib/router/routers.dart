@@ -1,4 +1,5 @@
 import 'package:fingerprint/homapage.dart';
+import 'package:fingerprint/presentation/screens/notificationscreen.dart';
 import 'package:fingerprint/presentation/screens/trackstationservicescreen.dart';
 import 'package:fingerprint/presentation/widgets/costumnavigationbar.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,8 @@ const String authScreenRoute = '/';
 const String homeTabsScreenRoute = '/home_tabs';
 const String homeContentScreenRoute = '/home_content'; 
 const String mapScreenRoute = '/map'; 
-const String trackstationscreen = '/trackstationscreen';
+const String trackstationscreen = '/trackstationscreen';       
+const String notificationsscreen = '/notificationsscreen';
 
 
 class AppRoute {
@@ -31,6 +33,8 @@ class AppRoute {
 
       case homeContentScreenRoute:
         return MaterialPageRoute(builder: (context) => const HomeScreen());
+      case notificationsscreen:
+      return MaterialPageRoute(builder: (context)=> const NotificationScreen()) ;
 
       case mapScreenRoute:
         return MaterialPageRoute(builder: (context) => const MapScreen());

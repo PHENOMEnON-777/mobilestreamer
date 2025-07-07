@@ -47,5 +47,15 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         emit(GettingTankByStationIdFailed(errormessage: e.toString()));
       }
     });
+
+     on<GetAllNotifications>((event, emit)async {
+      emit(GetingAllNotifications());
+      try {
+        final response = await userrepository.getallnotifications();
+        emit(GetingAllNotificationsSuccessfully(successfullMessage: response['msg'], data: response['data']));
+      } catch (e) {
+        emit(GetingAllNotificationsFailed(errorMessage: e.toString()));
+      }
+    });
   }
 }

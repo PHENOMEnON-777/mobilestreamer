@@ -11,4 +11,6 @@ class Storethemedata {
     final value = pref.getBool(key);
     return value;
   }
+
+  
 }

@@ -1,5 +1,6 @@
 import 'package:fingerprint/logic/themebloc/bloc/theme_bloc.dart';
 import 'package:fingerprint/logic/userbloc/bloc/user_bloc.dart';
+import 'package:fingerprint/presentation/widgets/notificationwidget.dart';
 import 'package:fingerprint/router/routers.dart'; // Make sure this path is correct
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -60,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Theme.of(context).colorScheme.surface,
       body: BlocListener<UserBloc, UserState>(
         listener: (context, state) {
+          
           // Handle successful data fetching for all companies
           if (state is GetingAllCompaniesSuccessful) {
             setState(() {
@@ -119,6 +121,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                       ),
                       Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 50.0),
+                        child: NotificationWidget(),
+                      ),
                       IconButton(onPressed: (){
                         context.read<ThemeBloc>().add(ChangeAppMode());
                       }, icon: Icon(Icons.dark_mode))
@@ -157,7 +163,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 // Show loading indicator
                 if (state is GetingAllCompanies) {
                   return const Expanded(
-                    child: Center(child: CircularProgressIndicator()),
+                    child: Center(child: CircularProgressIndicator(strokeWidth: 2,)),
                   );
                 }
 
@@ -196,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             vertical: 8.0,
                             horizontal: 16.0,
                           ),
-                          elevation: 6,
+                          elevation: 0,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -218,6 +224,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 subtitle: Text(
                                   userData['email'] ?? 'No email',
                                   style: TextStyle(color: Colors.green),
+                                    overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
                                 ),
                                 trailing: IconButton(
                                   icon: Icon(

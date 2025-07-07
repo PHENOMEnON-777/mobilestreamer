@@ -299,7 +299,7 @@ class _AuthScreenState extends State<AuthScreen>
           _pulseController.stop();
           
           // Add a small delay before navigation for better UX
-          await Future.delayed(const Duration(milliseconds: 1000));
+          await Future.delayed(const Duration(milliseconds: 500));
           
           if (mounted) {
             Navigator.pushReplacementNamed(context, homeTabsScreenRoute);

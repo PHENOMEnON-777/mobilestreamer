@@ -26,3 +26,5 @@ final class GetTankByStationId extends UserEvent{
     @override
   List<Object> get props => [id];
 }
+
+final class GetAllNotifications extends UserEvent {}

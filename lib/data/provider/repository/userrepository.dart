@@ -67,4 +67,19 @@ Future<Map<String,dynamic>> getTankbyStationId(String id)async {
     }
   }
 
+  Future<Map<String,dynamic>> getallnotifications() async {
+  try {
+    final response = await userserverservices.getallnotifications();
+    return 
+    {
+      "data":response['data'],
+      "success":response['success'],
+      "msg":response['msg']
+    };
+  
+    } catch (e) {
+      rethrow;
+    }
+}
+
 }

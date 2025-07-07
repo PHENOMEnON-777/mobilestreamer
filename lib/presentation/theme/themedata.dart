@@ -13,7 +13,7 @@ ThemeData lightmode = ThemeData(
     onSecondary: Colors.white,
     secondaryFixed: Colors.black,
   ),
-  secondaryHeaderColor: Color.fromARGB(255, 31, 46, 57),
+  secondaryHeaderColor: Color.fromARGB(255, 128, 189, 232),
   // Override Material 3 defaults to prevent purple colors
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
