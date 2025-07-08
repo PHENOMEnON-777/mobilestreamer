@@ -7,7 +7,7 @@ import 'package:http/http.dart' as http;
 
 class Userserverservices {
 
-    final url= 'http://10.41.34.1:8000';
+    final url= 'https://streamer-production.up.railway.app';
 
     Future<Map<String,dynamic>> stationServicesbuId(String id,)async {
     final response = await http.get(Uri.parse("$url/allStationServicesbyIdformobile/$id"),
